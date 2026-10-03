@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فندق ليث بالاس | Leith Palace Hotel - عين تموشنت</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Amiri & Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA7C11',
+                        },
+                        darkBg: '#0D0D0D',
+                        cardBg: '#181818',
+                    },
+                    fontFamily: {
+                        serif: ['Amiri', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0D0D0D;
+            color: #E5E5E5;
+            font-family: 'Amiri', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .gold-border:hover {
+            border-color: rgba(212, 175, 55, 0.9);
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(13, 13, 13, 0.75), rgba(13, 13, 13, 0.9)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <!-- Logo Section -->
+            <a href="#" class="flex items-center gap-3">
+                <!-- استخدام شعار الفندق من الملف المحلي -->
+                <img src="min/jpeg" alt="Leith Palace Logo" class="h-12 w-auto object-contain rounded border border-gold/40" onerror="this.src='https://via.placeholder.com/150x150/000000/D4AF37?text=LEITH+PALACE'">
+                <div>
+                    <span class="block text-xl font-bold gold-gradient-text tracking-wider font-sans">LEITH PALACE</span>
+                    <span class="text-xs text-gray-400 block -mt-1">فندق & أجنحة فاخرة - عين تموشنت</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center gap-8 text-lg">
+                <a href="#about" class="hover:text-gold transition">عن الفندق</a>
+                <a href="#services" class="hover:text-gold transition">المرافق</a>
+                <a href="#rooms" class="hover:text-gold transition">الغرف والأجنحة</a>
+                <a href="#booking" class="hover:text-gold transition">الحجز</a>
+                <a href="#contact" class="hover:text-gold transition">اتصل بنا</a>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#booking" class="bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-bold px-6 py-2.5 rounded-full shadow-lg 
+            hover:brightness-110 transition duration-300 font-sans">
+                احجز الآن
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
+        <div class="max-w-4xl text-center">
+            <div class="inline-block mb-4 px-4 py-1 border border-gold/40 rounded-full text-gold text-sm tracking-widest">
+                أهلاً بكم في ولاية عين تموشنت
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 gold-gradient-text leading-tight">
+                فندق ليث بالاس <br><span class="text-3xl md:text-5xl font-normal text-white">عنوان الفخامة والراحة المطلقة</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto">
+                استمتع بإقامة ملكية تجمع بين أرقى الخدمات الفندقية، الحمامات المعدنية والاسترخاء، الصالات الرياضية المجهزة، وأرقى الأطباق المحلية والعالمية.
+            </p>
+            
+            <div class="inline-flex items-center gap-3 bg-cardBg/90 border border-gold/40 px-6 py-3 rounded-2xl mb-10">
+                <span class="text-gray-300">الأسعار تبدأ من:</span>
+                <span class="text-2xl font-bold text-gold font-sans">8,000 DA</span>
+                <span class="text-xs text-gray-400">/ ليلة واحدة</span>
+            </div>
+
+            <!-- Quick Booking Bar -->
+            <div class="bg-cardBg/90 border border-gold/30 p-4 md:p-6 rounded-2xl shadow-2xl backdrop-blur-lg">
+                <form class="grid grid-cols-1 md:grid-cols-4 gap-4 text-right">
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">تاريخ الوصول</label>
+                        <input type="date" class="w-full bg-black/60 border border-gray-700 rounded-lg px-3 py-2 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">تاريخ المغادرة</label>
+                        <input type="date" class="w-full bg-black/60 border border-gray-700 rounded-lg px-3 py-2 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">نوع الإقامة</label>
+                        <select class="w-full bg-black/60 border border-gray-700 rounded-lg px-3 py-2 text-white focus:border-gold outline-none">
+                            <option>غرفة فاخرة (Luxury Room)</option>
+                            <option>جناح ملكي (Royal Suite)</option>
+                            <option>جناح العائلات (Family Suite)</option>
+                        </select>
+                    </div>
+                    <div class="flex items-end">
+                        <button type="button" onclick="document.getElementById('booking').scrollIntoView();" class="w-full bg-gold text-black font-bold py-2.5 rounded-lg hover:bg-gold-light transition">
+                            بحث عن التوفر
+                        </button>
+                    </div>
+                </form>
+                          </div>
+        </div>
+    </section>
+
+    <!-- Services / Amenities Section -->
+    <section id="services" class="py-20 px-6 bg-darkBg border-t border-gold/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gold-gradient-text mb-4">مرافق الفندق الفاخرة</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">تم تصميم كل مرافق فندق Leith Palace لتلبية أعلى معايير الرفاهية والراحة لضيوفنا الكرام.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: Swimming Pool -->
+                <div class="bg-cardBg border gold-border p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center text-gold text-2xl group-hover:bg-gold group-hover:text-black transition">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">المسبح الأولمبي</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">مسبح فاخر بنظام تبريد وتدفئة متطور، محاط بأسرة استرخاء وأجواء راقية للاستجمام.</p>
+                </div>
+
+                <!-- Service 2: Hammam & Spa -->
+                <div class="bg-cardBg border gold-border p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center text-gold text-2xl group-hover:bg-gold group-hover:text-black transition">
+                        <i class="fa-solid fa-hot-tub-person"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">الحمام والسبا</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">تجربة الاسترخاء التقليدية والحديثة مع جلسات العناية بالبشرة والتدليك على أيدي خبراء.</p>
+                </div>
+
+                <!-- Service 3: Gym -->
+                <div class="bg-cardBg border gold-border p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center text-gold text-2xl group-hover:bg-gold group-hover:text-black transition">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">صالة الرياضة</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">قاعة لياقة بدنية مجهزة بأحدث الأجهزة الرياضية عالمياً مع مدربين شخصيين.</p>
+                </div>
+
+                <!-- Service 4: Restaurant -->
+                <div class="bg-cardBg border gold-border p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flexitems-center justify-center text-gold text-2xl group-hover:bg-gold group-hover:text-black transition">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">المطعم الفاخر</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">تجربة طهي استثنائية تقدم أشهر المأكولات الجزائرية والأطباق العالمية بإشراف أشهر الطهاة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms & Suites Section -->
+    <section id="rooms" class="py-20 px-6 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gold-gradient-text mb-4">الغرف والأجنحة الفاخرة</h2>
+                <p class="text-gray-400">اختر مكان إقامتك المثالي المصمم خصيصاً لتوفير الراحة المطلقة</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Room 1 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Deluxe Room" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-black/80 text-gold px-3 py-1 rounded-full text-sm border border-gold/30">Deluxe</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">الغرفة التنفيذية الفاخرة</h3>
+                        <p class="text-gray-400 text-sm mb-4">تضم شاشة فاخرة، إطلالة ساحرة، إفطار مجاني، وسرير ملكي لشخصين.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-800">
+                            <div>
+                                <span class="text-2xl font-bold text-gold font-sans">8,000 DA</span>
+                                <span class="text-xs text-gray-500"> / ليلة</span>
+                            </div>
+                            <a href="#booking" class="text-gold hover:underline text-sm font-bold">احجز الآن &larr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Junior Suite" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-black/80 text-gold px-3 py-1 rounded-full text-sm border border-gold/30">Suite</span>
+                    </div>
+                     <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">جناح جونيور الملكي</h3>
+                        <p class="text-gray-400 text-sm mb-4">مساحة واسعة تحتوي على صالة استقبال منفصلة ودخول مجاني للحمام والسبا.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-800">
+                            <div>
+                                <span class="text-2xl font-bold text-gold font-sans">14,000 DA</span>
+                                <span class="text-xs text-gray-500"> / ليلة</span>
+                            </div>
+                            <a href="#booking" class="text-gold hover:underline text-sm font-bold">احجز الآن &larr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 3 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" alt="Presidential Suite" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-gold text-black font-bold px-3 py-1 rounded-full text-sm">VIP</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">الجناح الرئاسي الفاخر</h3>
+                        <p class="text-gray-400 text-sm mb-4">قمة الفخامة والخصوصية، إطلالة بانورامية كاملة، خدمة نادل شخصي ومرفقات VIP.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-800">
+                            <div>
+                                <span class="text-2xl font-bold text-gold font-sans">22,000 DA</span>
+                                <span class="text-xs text-gray-500"> / ليلة</span>
+                            </div>
+                            <a href="#booking" class="text-gold hover:underline text-sm font-bold">احجز الآن &larr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-20 px-6 bg-darkBg border-t border-gold/10">
+        <div class="max-w-4xl mx-auto bg-cardBg border border-gold/30 p-8 md:p-12 rounded-3xl shadow-2xl">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold gold-gradient-text mb-2">تأكيد حجز الإقامة</h2>
+                <p class="text-gray-400">قم بتعبئة معلوماتك وسيتواصل معك فريق الاستقبال فوراً لتأكيد الحجز</p>
+            </div>
+
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">الاسم الكامل</label>
+                         <input type="text" placeholder="مثال:  وسام امينة " class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">رقم الهاتف</label>
+                        <input type="tel" placeholder="06XX XX XX XX" class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none text-right font-sans">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">تاريخ الوصول</label>
+                        <input type="date" class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">تاريخ المغادرة</label>
+                        <input type="date" class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">عدد الأشخاص</label>
+                        <select class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none">
+                            <option>1 شخص</option>
+                            <option>2 شخصين</option>
+                            <option>عائلة (3 - 5 أشخاص)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-300 mb-2">ملاحظات أو طلبات خاصة</label>
+                    <textarea rows="3" placeholder="أذكر أي طلبات خاصة مثل الاستقبال من المطار أو تجهيزات إضافية..." class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-bold py-4 rounded-xl shadow-lg hover:brightness-110 transition duration-300 font-sans text-lg">
+                    إرسال طلب الحجز
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black border-t border-gold/20 py-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="min/jpeg" alt="Leith Palace" class="h-10 w-auto rounded border border-gold/40" onerror="this.src='https://via.placeholder.com/100/000000/D4AF37?text=LEITH'">
+                    <span class="text-xl font-bold gold-gradient-text">LEITH PALACE</span>
+                </div>
+                <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فندق ليث بالاس | Leith Palace Hotel - عين تموشنت</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Amiri & Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA7C11',
+                        },
+                        darkBg: '#0D0D0D',
+                        cardBg: '#181818',
+                    },
+                    fontFamily: {
+                        serif: ['Amiri', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0D0D0D;
+            color: #E5E5E5;
+            font-family: 'Amiri', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .gold-border:hover {
+            border-color: rgba(212, 175, 55, 0.9);
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(13, 13, 13, 0.75), rgba(13, 13, 13, 0.9)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <!-- Logo Section -->
+            <a href="#" class="flex items-center gap-3">
+                <!-- استخدام شعار الفندق من الملف المحلي -->
+                <img src="min/jpeg" alt="Leith Palace Logo" class="h-12 w-auto object-contain rounded border border-gold/40" onerror="this.src='https://via.placeholder.com/150x150/000000/D4AF37?text=LEITH+PALACE'">
+                <div>
+                    <span class="block text-xl font-bold gold-gradient-text tracking-wider font-sans">LEITH PALACE</span>
+                    <span class="text-xs text-gray-400 block -mt-1">فندق & أجنحة فاخرة - عين تموشنت</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center gap-8 text-lg">
+                <a href="#about" class="hover:text-gold transition">عن الفندق</a>
+                <a href="#services" class="hover:text-gold transition">المرافق</a>
+                <a href="#rooms" class="hover:text-gold transition">الغرف والأجنحة</a>
+                <a href="#booking" class="hover:text-gold transition">الحجز</a>
+                <a href="#contact" class="hover:text-gold transition">اتصل بنا</a>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#booking" class="bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-bold px-6 py-2.5 rounded-full shadow-lg hover:brightness-110 transition duration-300 font-sans">
+                احجز الآن
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
+        <div class="max-w-4xl text-center">
+            <div class="inline-block mb-4 px-4 py-1 border border-gold/40 rounded-full text-gold text-sm tracking-widest">
+                أهلاً بكم في ولاية عين تموشنت
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 gold-gradient-text leading-tight">
+                فندق ليث بالاس <br><span class="text-3xl md:text-5xl font-normal text-white">عنوان الفخامة والراحة المطلقة</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto">
+                استمتع بإقامة ملكية تجمع بين أرقى الخدمات الفندقية، الحمامات المعدنية والاسترخاء، الصالات الرياضية المجهزة، وأرقى الأطباق المحلية والعالمية.
+            </p>
+            
+            <div class="inline-flex items-center gap-3 bg-cardBg/90 border border-gold/40 px-6 py-3 rounded-2xl mb-10">
+                <span class="text-gray-300">الأسعار تبدأ من:</span>
+                <span class="text-2xl font-bold text-gold font-sans">8,000 DA</span>
+                <span class="text-xs text-gray-400">/ ليلة واحدة</span>
+            </div>
+
+            <!-- Quick Booking Bar -->
+            <div class="bg-cardBg/90 border border-gold/30 p-4 md:p-6 rounded-2xl shadow-2xl backdrop-blur-lg">
+                <form class="grid grid-cols-1 md:grid-cols-4 gap-4 text-right">
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">تاريخ الوصول</label>
+                        <input type="date" class="w-full bg-black/60 border border-gray-700 rounded-lg px-3 py-2 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">تاريخ المغادرة</label>
+                        <input type="date" class="w-full bg-black/60 border border-gray-700 rounded-lg px-3 py-2 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-1">نوع الإقامة</label>
+                        <select class="w-full bg-black/60 border border-gray-700 rounded-lg px-3 py-2 text-white focus:border-gold outline-none">
+                            <option>غرفة فاخرة (Luxury Room)</option>
+                            <option>جناح ملكي (Royal Suite)</option>
+                            <option>جناح العائلات (Family Suite)</option>
+                        </select>
+                    </div>
+                    <div class="flex items-end">
+                        <button type="button" onclick="document.getElementById('booking').scrollIntoView();" class="w-full bg-gold text-black font-bold py-2.5 rounded-lg hover:bg-gold-light transition">
+                            بحث عن التوفر
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Amenities Section -->
+    <section id="services" class="py-20 px-6 bg-darkBg border-t border-gold/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gold-gradient-text mb-4">مرافق الفندق الفاخرة</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">تم تصميم كل مرافق فندق Leith Palace لتلبية أعلى معايير الرفاهية والراحة لضيوفنا الكرام.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: Swimming Pool -->
+                <div class="bg-cardBg border gold-border p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center text-gold text-2xl group-hover:bg-gold group-hover:text-black transition">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">المسبح الأولمبي</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">مسبح فاخر بنظام تبريد وتدفئة متطور، محاط بأسرة استرخاء وأجواء راقية للاستجمام.</p>
+                </div>
+
+                <!-- Service 2: Hammam & Spa -->
+                <div class="bg-cardBg border gold-border p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center text-gold text-2xl group-hover:bg-gold group-hover:text-black transition">
+                        <i class="fa-solid fa-hot-tub-person"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">الحمام والسبا</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">تجربة الاسترخاء التقليدية والحديثة مع جلسات العناية بالبشرة والتدليك على أيدي خبراء.</p>
+                </div>
+
+                <!-- Service 3: Gym -->
+                <div class="bg-cardBg border gold-border p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center text-gold text-2xl group-hover:bg-gold group-hover:text-black transition">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">صالة الرياضة</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">قاعة لياقة بدنية مجهزة بأحدث الأجهزة الرياضية عالمياً مع مدربين شخصيين.</p>
+                </div>
+
+                <!-- Service 4: Restaurant -->
+                <div class="bg-cardBg border gold-border p-6 rounded-2xl text-center group hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center text-gold text-2xl group-hover:bg-gold group-hover:text-black transition">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">المطعم الفاخر</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">تجربة طهي استثنائية تقدم أشهر المأكولات الجزائرية والأطباق العالمية بإشراف أشهر الطهاة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms & Suites Section -->
+    <section id="rooms" class="py-20 px-6 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gold-gradient-text mb-4">الغرف والأجنحة الفاخرة</h2>
+                <p class="text-gray-400">اختر مكان إقامتك المثالي المصمم خصيصاً لتوفير الراحة المطلقة</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Room 1 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Deluxe Room" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-black/80 text-gold px-3 py-1 rounded-full text-sm border border-gold/30">Deluxe</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">الغرفة التنفيذية الفاخرة</h3>
+                        <p class="text-gray-400 text-sm mb-4">تضم شاشة فاخرة، إطلالة ساحرة، إفطار مجاني، وسرير ملكي لشخصين.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-800">
+                            <div>
+                                <span class="text-2xl font-bold text-gold font-sans">8,000 DA</span>
+                                <span class="text-xs text-gray-500"> / ليلة</span>
+                            </div>
+                            <a href="#booking" class="text-gold hover:underline text-sm font-bold">احجز الآن &larr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Junior Suite" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-black/80 text-gold px-3 py-1 rounded-full text-sm border border-gold/30">Suite</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">جناح جونيور الملكي</h3>
+                        <p class="text-gray-400 text-sm mb-4">مساحة واسعة تحتوي على صالة استقبال منفصلة ودخول مجاني للحمام والسبا.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-800">
+                            <div>
+                                <span class="text-2xl font-bold text-gold font-sans">14,000 DA</span>
+                                <span class="text-xs text-gray-500"> / ليلة</span>
+                            </div>
+                            <a href="#booking" class="text-gold hover:underline text-sm font-bold">احجز الآن &larr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 3 -->
+                <div class="bg-cardBg border border-gray-800 rounded-2xl overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" alt="Presidential Suite" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-gold text-black font-bold px-3 py-1 rounded-full text-sm">VIP</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">الجناح الرئاسي الفاخر</h3>
+                        <p class="text-gray-400 text-sm mb-4">قمة الفخامة والخصوصية، إطلالة بانورامية كاملة، خدمة نادل شخصي ومرفقات VIP.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-800">
+                            <div>
+                                <span class="text-2xl font-bold text-gold font-sans">22,000 DA</span>
+                                <span class="text-xs text-gray-500"> / ليلة</span>
+                            </div>
+                            <a href="#booking" class="text-gold hover:underline text-sm font-bold">احجز الآن &larr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-20 px-6 bg-darkBg border-t border-gold/10">
+        <div class="max-w-4xl mx-auto bg-cardBg border border-gold/30 p-8 md:p-12 rounded-3xl shadow-2xl">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold gold-gradient-text mb-2">تأكيد حجز الإقامة</h2>
+                <p class="text-gray-400">قم بتعبئة معلوماتك وسيتواصل معك فريق الاستقبال فوراً لتأكيد الحجز</p>
+            </div>
+
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">الاسم الكامل</label>
+                        <input type="text" placeholder="مثال: محمد بن علي" class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">رقم الهاتف</label>
+                        <input type="tel" placeholder="06XX XX XX XX" class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none text-right font-sans">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">تاريخ الوصول</label>
+                        <input type="date" class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">تاريخ المغادرة</label>
+                        <input type="date" class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-2">عدد الأشخاص</label>
+                        <select class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none">
+                            <option>1 شخص</option>
+                            <option>2 شخصين</option>
+                            <option>عائلة (3 - 5 أشخاص)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-300 mb-2">ملاحظات أو طلبات خاصة</label>
+                    <textarea rows="3" placeholder="أذكر أي طلبات خاصة مثل الاستقبال من المطار أو تجهيزات إضافية..." class="w-full bg-black/80 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-gold outline-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-bold py-4 rounded-xl shadow-lg hover:brightness-110 transition duration-300 font-sans text-lg">
+                    إرسال طلب الحجز
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black border-t border-gold/20 py-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="min/jpeg" alt="Leith Palace" class="h-10 w-auto rounded border border-gold/40" onerror="this.src='https://via.placeholder.com/100/000000/D4AF37?text=LEITH'">
+                    <span class="text-xl font-bold gold-gradient-text">LEITH PALACE</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    الفخامة والرفاهية في قلب ولاية عين تموشنت. تجربة فندقية استثنائية لا تُنسى.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-gold font-bold mb-4">روابط سريعة</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#about" class="hover:text-white transition">عن الفندق</a></li>
+                    <li><a href="#services" class="hover:text-white transition">المرافق والخدمات</a></li>
+                    <li><a href="#rooms" class="hover:text-white transition">الأجنحة والغرف</a></li>
+                    <li><a href="#booking" class="hover:text-white transition">احجز إقامتك</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gold font-bold mb-4">معلومات الاتصال</h4>
+                <ul class="space-y-2 text-gray-400 text-sm font-sans">
+                    <li><i class="fa-solid fa-location-dot text-gold ml-2"></i> عين تموشنت، الجزائر</li>
+                    <li><i class="fa-solid fa-phone text-gold ml-2"></i> +213 (0) 43 XX XX XX</li>
+                    <li><i class="fa-solid fa-envelope text-gold ml-2"></i> contact@leithpalace-temouchent.dz</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gold font-bold mb-4">تابعنا على التواصل الاجتماعي</h4>
+                <div class="flex gap-4 text-xl">
+                    <a href="#" class="w-10 h-10 rounded-full bg-cardBg border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-black transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-cardBg border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-black transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-cardBg border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-black transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-gray-900 pt-6 text-center text-gray-500 text-xs">
+            © 2026 فندق Leith Palace - عين تموشنت. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+<script>
+function sendBookingToHotel() {
+    // رقم هاتف الفندق مع المفتاح الدولي
+    var hotelPhone = "213661000000"; 
+
+    // جلب البيانات من حقول الحجز المسمّاة في صفحتك
+    var guestName = document.getElementById("guestName") ? document.getElementById("guestName").value : "";
+    var checkIn = document.getElementById("checkIn") ? document.getElementById("checkIn").value : "";
+
+    var message = "طلب حجز جديد من تطبيق الفندق:%0A" +
+                  "اسم الضيف: " + encodeURIComponent(guestName) + "%0A" +
+                  "تاريخ الوصول: " + encodeURIComponent(checkIn);
+
+    window.open("https://wa.me/" + hotelPhone + "?text=" + message, '_blank');
+}
+</script>
+</body>
+</html>
+
